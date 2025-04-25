@@ -2,102 +2,81 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="relative min-h-screen bg-black text-white font-[family-name:var(--font-geist-sans)] overflow-hidden">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 z-0">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+          src="/cybercoin.jpeg" // Optional: Your background image
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-20"
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6 py-20 max-w-4xl mx-auto">
+        <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+          Welcome to the future of Web3, DeFi, GameFi.
+        </h1>
+        <p className="text-md sm:text-lg text-gray-300 mb-2">
+          Whitepapers out <strong>9/25/2025</strong>
+        </p>
+        <p className="text-gray-400 max-w-xl mb-10">
+          This is the Official website for the <strong>Xyber™️</strong> Coin.
+          Here you will find general information including all of our products.
+        </p>
+
+        {/* External Links */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/xybercoin"
+            className="bg-white text-black font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            XYBERCOIN
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/xyber-chrome"
+            className="border border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition"
           >
-            Read our docs
+            XYBER $CHROME
+          </a>
+          <a
+            href="/xyber-bnp"
+            className="border border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition"
+          >
+            XYBER $BNP
+          </a>
+          <a
+            href="/swap-xybercoins"
+            className="bg-green-500 text-black py-2 px-6 rounded-full hover:bg-green-600 transition"
+          >
+            SWAP XYBERCOINS
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Subscribe Section */}
+        <div className="w-full max-w-md bg-white rounded-xl p-6 text-black">
+          <h2 className="text-xl font-bold mb-2">Subscribe</h2>
+          <p className="text-sm mb-4 text-gray-700">
+            Sign up to be the first to know about our soft launch events.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-2">
+            <input
+              type="email"
+              placeholder="Email"
+              className="flex-1 px-4 py-2 border rounded-lg text-sm"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition"
+            >
+              SIGN UP
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
