@@ -1,82 +1,84 @@
-import Image from "next/image";
+"use client";
+
+import Header from "./components/header";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen bg-black text-white font-[family-name:var(--font-geist-sans)] overflow-hidden">
-      {/* Background Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/cybercoin.jpeg" // Optional: Your background image
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="opacity-20"
-        />
-      </div>
+    <main className="flex flex-col min-h-screen">
+      <Header />
 
-      {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-6 py-20 max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-          Welcome to the future of Web3, DeFi, GameFi.
+      {/* Hero Section */}
+      <section className="flex flex-col items-center justify-center text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white py-24 px-6">
+        <h1 className="text-5xl md:text-6xl font-extrabold mb-6">
+          Welcome to Xybercoin
         </h1>
-        <p className="text-md sm:text-lg text-gray-300 mb-2">
-          Whitepapers out <strong>9/25/2025</strong>
+        <p className="text-lg md:text-xl mb-8 max-w-2xl">
+          Powering the Future of Decentralized Finance with Speed, Security, and
+          Scalability.
         </p>
-        <p className="text-gray-400 max-w-xl mb-10">
-          This is the Official website for the <strong>Xyber™️</strong> Coin.
-          Here you will find general information including all of our products.
+        <Link href="#purchase">
+          <button className="bg-white text-blue-600 font-bold px-6 py-3 rounded-xl hover:bg-gray-200 transition">
+            Get Xybercoin Now
+          </button>
+        </Link>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 px-6 bg-gray-50 text-center">
+        <h2 className="text-4xl font-bold mb-6 text-blue-600">About Xyber</h2>
+        <p className="max-w-3xl mx-auto text-gray-600 text-lg">
+          Xybercoin is a next-generation cryptocurrency designed to
+          revolutionize transactions, empower DeFi platforms, and provide
+          lightning-fast, low-cost transfers globally. Join us at the forefront
+          of innovation.
         </p>
+      </section>
 
-        {/* External Links */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          <a
-            href="/xybercoin"
-            className="bg-white text-black font-semibold py-2 px-6 rounded-full hover:bg-gray-200 transition"
-          >
-            XYBERCOIN
-          </a>
-          <a
-            href="/xyber-chrome"
-            className="border border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition"
-          >
-            XYBER $CHROME
-          </a>
-          <a
-            href="/xyber-bnp"
-            className="border border-white py-2 px-6 rounded-full hover:bg-white hover:text-black transition"
-          >
-            XYBER $BNP
-          </a>
-          <a
-            href="/swap-xybercoins"
-            className="bg-green-500 text-black py-2 px-6 rounded-full hover:bg-green-600 transition"
-          >
-            SWAP XYBERCOINS
-          </a>
-        </div>
+      {/* Map Road Section */}
+      <section id="maproad" className="py-20 px-6 text-center">
+        <h2 className="text-4xl font-bold mb-6 text-purple-600">
+          Map Road of Xyber
+        </h2>
+        <ul className="space-y-4 max-w-3xl mx-auto text-gray-600 text-lg">
+          <li>🚀 Q2 2025: Launch Xybercoin Token & Whitepaper Release</li>
+          <li>🛡️ Q3 2025: Security Audits & Strategic Partnerships</li>
+          <li>🌍 Q4 2025: Global Exchange Listings & Wallet Integrations</li>
+          <li>💎 2026+: DeFi Ecosystem Growth, Staking, and NFTs Launch</li>
+        </ul>
+      </section>
 
-        {/* Subscribe Section */}
-        <div className="w-full max-w-md bg-white rounded-xl p-6 text-black">
-          <h2 className="text-xl font-bold mb-2">Subscribe</h2>
-          <p className="text-sm mb-4 text-gray-700">
-            Sign up to be the first to know about our soft launch events.
-          </p>
-          <form className="flex flex-col sm:flex-row gap-2">
-            <input
-              type="email"
-              placeholder="Email"
-              className="flex-1 px-4 py-2 border rounded-lg text-sm"
-              required
-            />
-            <button
-              type="submit"
-              className="bg-black text-white px-6 py-2 rounded-lg font-semibold hover:bg-gray-800 transition"
-            >
-              SIGN UP
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+      {/* White Paper Section */}
+      <section id="whitepaper" className="py-20 px-6 bg-gray-50 text-center">
+        <h2 className="text-4xl font-bold mb-6 text-blue-600">White Paper</h2>
+        <p className="max-w-3xl mx-auto text-gray-600 text-lg mb-6">
+          Dive deep into the technology, vision, and mission behind Xybercoin.
+          Read our detailed whitepaper for all the insights.
+        </p>
+        <a
+          href="/whitepaper.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition"
+        >
+          View White Paper
+        </a>
+      </section>
+
+      {/* Purchase Section */}
+      <section
+        id="purchase"
+        className="py-20 px-6 text-center bg-gradient-to-r from-purple-500 to-blue-600 text-white"
+      >
+        <h2 className="text-4xl font-bold mb-6">Purchase Xybercoin</h2>
+        <p className="max-w-2xl mx-auto mb-8 text-lg">
+          Get ready to own the future. Purchase Xybercoin securely and be part
+          of the revolution.
+        </p>
+        <button className="bg-white text-purple-600 font-bold px-8 py-4 rounded-xl hover:bg-gray-200 transition">
+          Buy Now
+        </button>
+      </section>
+    </main>
   );
 }
